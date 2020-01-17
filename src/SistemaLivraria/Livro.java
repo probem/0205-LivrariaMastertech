@@ -91,10 +91,53 @@ public class Livro {
                 ", totalPaginas=" + totalPaginas +
                 ", aberto=" + aberto +
                 ", genero='" + genero + '\'' +
-                ", autor=" + autor +
-                ", editora=" + editora +
+                ", autor=" + autor.listarDados() +
+                ", editora=" + editora.listarDados() +
                 ", paginaAtual=" + paginaAtual +
                 ", anoPublicacao=" + anoPublicacao +
                 '}';
     }
+
+    public int proximaPagina(int paginaAtual){
+        if(this.aberto){
+            this.paginaAtual = paginaAtual + 1;
+            return  this.paginaAtual;
+        }
+        return 0;
+    }
+
+    public int paginaAnterior(int paginaAtual){
+        //se o livro estiver aberto
+        // aberto == true
+        if(this.aberto){
+            this.paginaAtual = paginaAtual - 1;
+            return  this.paginaAtual;
+        }
+        return 0;
+    }
+
+    public void abrirLivro(){
+        this.aberto = true;
+    }
+
+    public void fecharLivro(){
+        if(this.aberto == true){
+            this.aberto = false;
+        }
+    }
+
+    public void folhear(int pagina){
+        if(this.aberto){
+            if(pagina <= this.totalPaginas) {
+                this.paginaAtual = pagina;
+            }
+        }
+        else {
+            System.out.println("LIVRO FECHADO");
+        }
+    }
+
+
+
+
 }

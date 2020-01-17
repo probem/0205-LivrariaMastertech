@@ -8,6 +8,15 @@ public class Editora {
     private String pais;
     private String estado;
 
+    public Editora(String nome, int ano, String cnpj, String endereco, String pais, String estado) {
+        this.nome = nome;
+        this.ano = ano;
+        this.cnpj = cnpj;
+        this.endereco = endereco;
+        this.pais = pais;
+        this.estado = estado;
+    }
+
     public String getNome() {
         return nome;
     }

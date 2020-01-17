@@ -9,6 +9,16 @@ public class Autor {
     private String cidade;
     private int idade;
 
+    public Autor(String nome, String sobrenome, String generoLiterario, char sexo, String pais, String cidade, int idade) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.generoLiterario = generoLiterario;
+        this.sexo = sexo;
+        this.pais = pais;
+        this.cidade = cidade;
+        this.idade = idade;
+    }
+
     public String getNome() {
         return nome;
     }
